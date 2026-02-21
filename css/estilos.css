@@ -675,3 +675,69 @@ body {
         */
     }
 }
+/* CONTENEDOR */
+.wa-container {
+    position: fixed;
+    bottom: 20px;
+    left: 20px; /* IZQUIERDA */
+    z-index: 9999;
+}
+
+/* BOTON */
+.wa-button {
+    background: #c62828; /* ROJO */
+    color: white;
+    font-size: 26px;
+    padding: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition: 0.3s;
+}
+
+.wa-button:hover {
+    transform: scale(1.1);
+}
+
+/* CAJA DESPLEGABLE */
+.wa-box {
+    display: none;
+    flex-direction: column;
+    background: #f2f2f2; /* PLOMO CLARO */
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    margin-bottom: 10px;
+    min-width: 200px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+/* TITULO */
+.wa-box h4 {
+    margin-bottom: 10px;
+    color: #c62828; /* ROJO */
+}
+
+/* LINKS */
+.wa-box a {
+    text-decoration: none;
+    padding: 8px;
+    margin: 4px 0;
+    background: white;
+    border-radius: 8px;
+    color: #333;
+    transition: 0.3s;
+    font-size: 14px;
+}
+
+.wa-box a:hover {
+    background: #c62828;
+    color: white;
+}
+
+/* MOSTRAR */
+.show {
+    display: flex;
+}
