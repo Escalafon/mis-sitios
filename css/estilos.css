@@ -741,3 +741,48 @@ body {
 .show {
     display: flex;
 }
+
+/* ===================== */
+/* WHATSAPP FLOTANTE */
+/* ===================== */
+
+.wa-float {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 9999;
+}
+
+.wa-button {
+    background: #c0392b;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 50%;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.wa-box {
+    display: none;
+    background: #555;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.wa-box h4 {
+    color: white;
+    margin: 5px 0;
+}
+
+.wa-box a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+}
+
+.wa-box a:hover {
+    background: #c0392b;
+}
