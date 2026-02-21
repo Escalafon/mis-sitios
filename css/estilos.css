@@ -685,15 +685,13 @@ body {
 
 /* BOTON */
 .wa-button {
-    background: #25D366; /* ROJO */
+    background: #25D366;
     color: white;
-    font-size: 26px;
+    border: none;
     padding: 15px;
     border-radius: 50%;
+    font-size: 22px;
     cursor: pointer;
-    text-align: center;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    transition: 0.3s;
 }
 
 .wa-button:hover {
