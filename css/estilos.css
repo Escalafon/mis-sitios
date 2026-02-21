@@ -675,6 +675,15 @@ body {
         */
     }
 }
+/* FORZAR COLOR EN TODOS LOS DISPOSITIVOS */
+.wa-float .wa-button {
+    background-color: #25D366 !important;
+}
+
+.wa-float .wa-button:hover {
+    background-color: #1ebe5d !important;
+}
+
 /* CONTENEDOR */
 .wa-container {
     position: fixed;
