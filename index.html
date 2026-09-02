@@ -2,397 +2,1041 @@
 <html lang="es">
 
 <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EEL-UGEL05</title>
+
+    <title>Plataforma Virtual de Atención al Usuario - UGEL 05</title>
+
+    <meta name="theme-color" content="#0a9f57">
+    <meta name="title" content="Plataforma Virtual de Atención al Usuario - UGEL 05">
+    <meta name="description"
+        content="Plataforma Virtual de Atención al Usuario - UGEL 05 San Juan de Lurigancho y El Agustino.">
+
     <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     <link rel="stylesheet" href="./css/normalize.css">
     <link rel="stylesheet" href="./css/estilos.css">
 
-    <meta name="theme-color" content="#2091F9">
+    <style>
+        /* =========================================================
+           ESTILOS ADICIONALES DE LA PLATAFORMA
+           No reemplazan estilos.css; solo agregan los nuevos bloques.
+           ========================================================= */
 
-    <meta name="title" content="Aprende CSS desde cero">
-    <meta name="description"
-        content="Hola, soy una descripción que verás cuando busques algo de mi temática en Google.">
+        .seccion-web {
+            padding: 70px 0;
+        }
 
+        .seccion-web--gris {
+            background: #f5f7f9;
+        }
 
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://alexcgdesign.github.io">
-    <meta property="og:title" content="Aprende CSS desde cero">
-    <meta property="og:description"
-        content="Hola, soy una descripción que verás cuando busques algo de mi temática en Google.">
-    <meta property="og:image" content="https://alexcgdesign.github.io/images/css.jpg">
+        .bloques-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-top: 35px;
+        }
 
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://www.jordanalex.com/">
-    <meta property="twitter:title" content="Aprende CSS desde cero">
-    <meta property="twitter:description"
-        content="Hola, soy una descripción que verás cuando busques algo de mi temática en Google.">
-    <meta property="twitter:image" content="https://alexcgdesign.github.io/images/css.jpg">
+        .bloque-card {
+            background: #fff;
+            border-radius: 15px;
+            padding: 28px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, .08);
+            border: 1px solid #e8e8e8;
+            transition: transform .2s ease, box-shadow .2s ease;
+        }
+
+        .bloque-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, .12);
+        }
+
+        .bloque-icono {
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #e8f8ef;
+            color: #079447;
+            font-size: 25px;
+            margin-bottom: 18px;
+        }
+
+        .bloque-card h3 {
+            margin-bottom: 10px;
+            color: #222;
+        }
+
+        .bloque-card p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .boton-web {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 11px 18px;
+            border-radius: 8px;
+            background: #079447;
+            color: white !important;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background .2s ease;
+        }
+
+        .boton-web:hover {
+            background: #067b3a;
+        }
+
+        .boton-web--azul {
+            background: #1769aa;
+        }
+
+        .boton-web--azul:hover {
+            background: #125486;
+        }
+
+        .normas-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin-top: 35px;
+        }
+
+        .norma-card {
+            background: white;
+            border-left: 5px solid #079447;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 18px rgba(0, 0, 0, .07);
+        }
+
+        .norma-card h3 {
+            margin-bottom: 10px;
+            color: #222;
+        }
+
+        .norma-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .etiqueta {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 20px;
+            background: #e8f8ef;
+            color: #087b3a;
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .comunicados-lista {
+            display: grid;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .comunicado {
+            background: #fff;
+            border-radius: 10px;
+            padding: 18px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            border: 1px solid #e8e8e8;
+        }
+
+        .comunicado strong {
+            color: #222;
+        }
+
+        .comunicado small {
+            display: block;
+            color: #777;
+            margin-top: 5px;
+        }
+
+        .horario-box {
+            background: #079447;
+            color: white;
+            border-radius: 18px;
+            padding: 35px;
+            text-align: center;
+            margin-top: 35px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, .12);
+        }
+
+        .horario-box i {
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .horario-box h3 {
+            font-size: 28px;
+            margin-bottom: 12px;
+        }
+
+        .horario-box p {
+            font-size: 18px;
+            margin: 5px 0;
+        }
+
+        @media (max-width: 850px) {
+            .bloques-grid,
+            .normas-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .comunicado {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-    <header class="hero">
+    <!-- =========================================================
+         ENCABEZADO
+         ========================================================= -->
+    <header class="hero" id="inicio">
+
         <nav class="nav container">
+
             <div class="nav__logo">
-                <h2 class="nav__title">EEL-RECURSOS HUMANO - UGEL 05 </h2>
+                <h2 class="nav__title">UGEL 05 - RECURSOS HUMANOS</h2>
             </div>
 
             <ul class="nav__link nav__link--menu">
+
                 <li class="nav__items">
-                    <a href="#" class="nav__links">Inicio</a>
-                </li>
-                <li class="nav__items">
-                    <a href="#" class="nav__links">Acerca de</a>
-                </li>
-                <li class="nav__items">
-                    <a href="#" class="nav__links">Contacto</a>
-                </li>
-                <li class="nav__items">
-                    <a href="#" class="nav__links">Blog</a>
+                    <a href="#inicio" class="nav__links">Inicio</a>
                 </li>
 
-                <img src="./images/close.svg" class="nav__close">
+                <li class="nav__items">
+                    <a href="#enlaces" class="nav__links">Enlaces</a>
+                </li>
+
+                <li class="nav__items">
+                    <a href="#normas" class="nav__links">Normas</a>
+                </li>
+
+                <li class="nav__items">
+                    <a href="#comunicados" class="nav__links">Comunicados</a>
+                </li>
+
+                <li class="nav__items">
+                    <a href="#preguntas" class="nav__links">Preguntas frecuentes</a>
+                </li>
+
+                <img src="./images/close.svg" class="nav__close" alt="Cerrar menú">
+
             </ul>
 
             <div class="nav__menu">
-                <img src="./images/menu.svg" class="nav__img">
+                <img src="./images/menu.svg" class="nav__img" alt="Abrir menú">
             </div>
+
         </nav>
 
+        <!-- =====================================================
+             PORTADA
+             ===================================================== -->
         <section class="hero__container container">
-            <h1 class="hero__title">Plataforma Virtual de Atención al Usuario.</h1>
-            <p class="hero__paragraph">UGEL 05 – San Juan de Lurigancho y El Agustino.</p>
-            <a href="#" class="cta">Comienza ahora</a>
+
+            <h1 class="hero__title">
+                Plataforma Virtual de Atención al Usuario
+            </h1>
+
+            <p class="hero__paragraph">
+                UGEL 05 - San Juan de Lurigancho y El Agustino
+            </p>
+
+            <p class="hero__paragraph">
+                Información, orientación y atención virtual para nuestros usuarios.
+            </p>
+
+            <a href="#enlaces" class="cta">
+                Ver enlaces de interés
+            </a>
+
         </section>
+
     </header>
 
+
     <main>
-        <section class="container about">
-            <h2 class="subtitle">¿Qué aprenderás en este curso?</h2>
-            <p class="about__paragraph">Todo lo necesario y obligatorio de CSS, (Flexbox, Grid, Custom properties,
-                Position, Animaciones, Box Model y más)</p>
 
-            <div class="about__main">
-                <article class="about__icons">
-                    <img src="./images/shapes.svg" class="about__icon">
-                    <h3 class="about__title">CSS Layouts</h3>
-                    <p class="about__paragrah">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae tempore
-                        porro eius facilis?</p>
-                </article>
+        <!-- =====================================================
+             ENLACES OFICIALES DEL MINISTERIO
+             ===================================================== -->
+        <section class="seccion-web" id="enlaces">
 
-                <article class="about__icons">
-                    <img src="./images/paint.svg" class="about__icon">
-                    <h3 class="about__title">Animaciones</h3>
-                    <p class="about__paragrah">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae tempore
-                        porro eius facilis?</p>
-                </article>
+            <div class="container">
 
-                <article class="about__icons">
-                    <img src="./images/code.svg" class="about__icon">
-                    <h3 class="about__title">Sass</h3>
-                    <p class="about__paragrah">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae tempore
-                        porro eius facilis?</p>
-                </article>
-            </div>
-        </section>
+                <h2 class="subtitle">
+                    Enlaces de interés
+                </h2>
 
-        <section class="knowledge">
-            <div class="knowledge__container container">
-                <div class="knowledege__texts">
-                    <h2 class="subtitle">Curso completo de CSS3. ¡Domina CSS de una vez por todas!</h2>
-                    <p class="knowledge__paragraph">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi,
-                        aliquam nemo in facere suscipit at delectus unde labore ad officia iste accusantium eaque
-                        aperiam laborum est voluptate totam? Modi, obcaecati?</p>
-                    <a href="#" class="cta">Entra al curso</a>
+                <p class="about__paragraph">
+                    Accede directamente a plataformas y espacios oficiales del
+                    Ministerio de Educación y del Estado Peruano.
+                </p>
+
+                <div class="bloques-grid">
+
+                    <article class="bloque-card">
+
+                        <div class="bloque-icono">
+                            <i class="fa-solid fa-building-columns"></i>
+                        </div>
+
+                        <h3>Ministerio de Educación</h3>
+
+                        <p>
+                            Portal oficial del Ministerio de Educación del Perú.
+                        </p>
+
+                        <a class="boton-web"
+                            href="https://www.gob.pe/minedu"
+                            target="_blank"
+                            rel="noopener noreferrer">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            Ingresar
+                        </a>
+
+                    </article>
+
+
+                    <article class="bloque-card">
+
+                        <div class="bloque-icono">
+                            <i class="fa-solid fa-scale-balanced"></i>
+                        </div>
+
+                        <h3>Normas y documentos legales</h3>
+
+                        <p>
+                            Consulta resoluciones, decretos, normas y documentos
+                            publicados oficialmente por el MINEDU.
+                        </p>
+
+                        <a class="boton-web boton-web--azul"
+                            href="https://www.gob.pe/institucion/minedu/normas-legales"
+                            target="_blank"
+                            rel="noopener noreferrer">
+                            <i class="fa-solid fa-file-lines"></i>
+                            Ver normas
+                        </a>
+
+                    </article>
+
+
+                    <article class="bloque-card">
+
+                        <div class="bloque-icono">
+                            <i class="fa-solid fa-bullhorn"></i>
+                        </div>
+
+                        <h3>Comunicados MINEDU</h3>
+
+                        <p>
+                            Consulta los comunicados publicados por el Ministerio
+                            de Educación.
+                        </p>
+
+                        <a class="boton-web"
+                            href="https://www.gob.pe/institucion/minedu/colecciones/13088-comunicados"
+                            target="_blank"
+                            rel="noopener noreferrer">
+                            <i class="fa-solid fa-bullhorn"></i>
+                            Ver comunicados
+                        </a>
+
+                    </article>
+
+
+                    <article class="bloque-card">
+
+                        <div class="bloque-icono">
+                            <i class="fa-solid fa-file-circle-check"></i>
+                        </div>
+
+                        <h3>Normas y documentos</h3>
+
+                        <p>
+                            Revisa informes, publicaciones, documentos y compendios
+                            oficiales del MINEDU.
+                        </p>
+
+                        <a class="boton-web boton-web--azul"
+                            href="https://www.gob.pe/institucion/minedu/normas-y-documentos"
+                            target="_blank"
+                            rel="noopener noreferrer">
+                            <i class="fa-solid fa-folder-open"></i>
+                            Consultar
+                        </a>
+
+                    </article>
+
+
+                    <article class="bloque-card">
+
+                        <div class="bloque-icono">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+
+                        <h3>PerúEduca</h3>
+
+                        <p>
+                            Acceso a la plataforma educativa oficial del Ministerio
+                            de Educación.
+                        </p>
+
+                        <a class="boton-web"
+                            href="https://www.perueduca.pe/"
+                            target="_blank"
+                            rel="noopener noreferrer">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            Ingresar
+                        </a>
+
+                    </article>
+
+
+                    <article class="bloque-card">
+
+                        <div class="bloque-icono">
+                            <i class="fa-solid fa-landmark"></i>
+                        </div>
+
+                        <h3>Gob.pe</h3>
+
+                        <p>
+                            Plataforma oficial del Estado Peruano para consultar
+                            trámites, servicios e información pública.
+                        </p>
+
+                        <a class="boton-web boton-web--azul"
+                            href="https://www.gob.pe/"
+                            target="_blank"
+                            rel="noopener noreferrer">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            Ingresar
+                        </a>
+
+                    </article>
+
                 </div>
 
-                <figure class="knowledge__picture">
-                    <img src="./images/macbook.png" class="knowledge__img">
-                </figure>
             </div>
+
         </section>
 
-        <section class="price container">
-            <h2 class="subtitle">Obten el plan perfecto para aprender</h2>
 
-            <div class="price__table">
-                <div class="price__element">
-                    <p class="price__name">Flexbox</p>
-                    <h3 class="price__price">Free</h3>
+        <!-- =====================================================
+             NORMAS DESTACADAS / ACTUALIZADAS
+             ===================================================== -->
+        <section class="seccion-web seccion-web--gris" id="normas">
 
-                    <div class="price__items">
-                        <p class="price__features">Flexbox</p>
-                        <p class="price__features">Layouts</p>
-                        <p class="price__features">Responsive</p>
-                    </div>
+            <div class="container">
 
-                    <a href="#" class="price__cta">Empieza ahora</a>
+                <h2 class="subtitle">
+                    Normas y documentos destacados
+                </h2>
+
+                <p class="about__paragraph">
+                    Espacio para colocar las normas que deseas destacar para
+                    conocimiento de los usuarios y colaboradores.
+                </p>
+
+                <div class="normas-grid">
+
+                    <article class="norma-card">
+
+                        <span class="etiqueta">
+                            LICENCIAS
+                        </span>
+
+                        <h3>
+                            RVM N.° 031-2026-MINEDU
+                        </h3>
+
+                        <p>
+                            Disposiciones para el procedimiento de las licencias
+                            otorgadas al personal correspondiente.
+                        </p>
+
+                        <a class="boton-web boton-web--azul"
+                            href="https://www.gob.pe/institucion/minedu/normas-legales"
+                            target="_blank"
+                            rel="noopener noreferrer">
+                            Consultar norma
+                        </a>
+
+                    </article>
+
+
+                    <article class="norma-card">
+
+                        <span class="etiqueta">
+                            REFORMA MAGISTERIAL
+                        </span>
+
+                        <h3>
+                            Ley N.° 29944
+                        </h3>
+
+                        <p>
+                            Ley de Reforma Magisterial. Puedes colocar aquí el
+                            enlace directo al documento que utilice tu equipo.
+                        </p>
+
+                        <a class="boton-web boton-web--azul"
+                            href="https://www.gob.pe/institucion/minedu/normas-legales"
+                            target="_blank"
+                            rel="noopener noreferrer">
+                            Consultar normas
+                        </a>
+
+                    </article>
+
+
+                    <article class="norma-card">
+
+                        <span class="etiqueta">
+                            AGREGAR NORMA
+                        </span>
+
+                        <h3>
+                            Nueva norma o resolución
+                        </h3>
+
+                        <p>
+                            Este cuadro queda preparado para agregar otra norma
+                            actualizada. Solo cambia el título, descripción y enlace.
+                        </p>
+
+                        <a class="boton-web"
+                            href="https://www.gob.pe/institucion/minedu/normas-legales"
+                            target="_blank"
+                            rel="noopener noreferrer">
+                            Ver MINEDU
+                        </a>
+
+                    </article>
+
+
+                    <article class="norma-card">
+
+                        <span class="etiqueta">
+                            DOCUMENTO DESTACADO
+                        </span>
+
+                        <h3>
+                            Agrega aquí tu documento
+                        </h3>
+
+                        <p>
+                            Puedes utilizar este espacio para una directiva,
+                            resolución, informe técnico, comunicado interno u
+                            otro documento de interés.
+                        </p>
+
+                        <a class="boton-web"
+                            href="#"
+                            onclick="alert('Aquí colocaremos el enlace del documento.'); return false;">
+                            Abrir documento
+                        </a>
+
+                    </article>
+
                 </div>
-
-
-                <div class="price__element price__element--best">
-                    <p class="price__name">Grid</p>
-                    <h3 class="price__price">$30/mes</h3>
-
-                    <div class="price__items">
-                        <p class="price__features">Grid</p>
-                        <p class="price__features">Implicit Grid</p>
-                        <p class="price__features">Responsive</p>
-                    </div>
-
-                    <a href="#" class="price__cta">Empieza ahora</a>
-                </div>
-
-
-                <div class="price__element">
-                    <p class="price__name">Animaciones</p>
-                    <h3 class="price__price">$40/mes</h3>
-
-                    <div class="price__items">
-                        <p class="price__features">Animation</p>
-                        <p class="price__features">Transition</p>
-                        <p class="price__features">Render Website</p>
-                    </div>
-
-                    <a href="#" class="price__cta">Empieza ahora</a>
-                </div>
-
 
             </div>
+
         </section>
 
-        <section class="testimony">
-            <div class="testimony__container container">
-                <img src="./images/leftarrow.svg" class="testimony__arrow" id="before">
 
-                <section class="testimony__body testimony__body--show" data-id="1">
-                    <div class="testimony__texts">
-                        <h2 class="subtitle">Mi nombre es Jordan Alexander, <span class="testimony__course">estudiante
-                                de CSS.</span></h2>
-                        <p class="testimony__review">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut est
-                            esse, asperiores eaque totam nulla repudiandae quasi, deserunt culpa exercitationem
-                            blanditiis laborum veniam laboriosam saepe reiciendis dolorem. Cum, ratione voluptatum!</p>
-                    </div>
+        <!-- =====================================================
+             COMUNICADOS
+             ===================================================== -->
+        <section class="seccion-web" id="comunicados">
 
-                    <figure class="testimony__picture">
-                        <img src="./images/face.jpg" class="testimony__img">
-                    </figure>
-                </section>
+            <div class="container">
 
-                <section class="testimony__body" data-id="2">
-                    <div class="testimony__texts">
-                        <h2 class="subtitle">Mi nombre es Alejandra Perez, <span class="testimony__course">estudiante de
-                                CSS.</span></h2>
-                        <p class="testimony__review">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut est
-                            esse, asperiores eaque laborum veniam laboriosam saepe reiciendis dolorem. Cum, ratione
-                            voluptatum!</p>
-                    </div>
+                <h2 class="subtitle">
+                    Comunicados y novedades
+                </h2>
 
-                    <figure class="testimony__picture">
-                        <img src="./images/face2.jpg" class="testimony__img">
-                    </figure>
-                </section>
+                <p class="about__paragraph">
+                    Este espacio puede utilizarse para publicar avisos,
+                    comunicados, convocatorias y novedades dirigidas al personal.
+                </p>
 
-                <section class="testimony__body" data-id="3">
-                    <div class="testimony__texts">
-                        <h2 class="subtitle">Mi nombre es Karen Arteaga, <span class="testimony__course">estudiante de
-                                CSS.</span></h2>
-                        <p class="testimony__review">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut est
-                            esse, niam laboriosam saepe reiciendis dolorem. Cum, ratione voluptatum!</p>
-                    </div>
+                <div class="comunicados-lista">
 
-                    <figure class="testimony__picture">
-                        <img src="./images/face3.jpg" class="testimony__img">
-                    </figure>
-                </section>
+                    <article class="comunicado">
 
-                <section class="testimony__body" data-id="4">
-                    <div class="testimony__texts">
-                        <h2 class="subtitle">Mi nombre es Kevin Ramirez, <span class="testimony__course">estudiante de
-                                CSS.</span></h2>
-                        <p class="testimony__review">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut est
-                            esse, niam laboriosam saepe reiciendis dolorem. Cum, ratione voluptatum!</p>
-                    </div>
+                        <div>
+                            <strong>
+                                Comunicado / Aviso N.° 01
+                            </strong>
 
-                    <figure class="testimony__picture">
-                        <img src="./images/face4.jpg" class="testimony__img">
-                    </figure>
-                </section>
+                            <small>
+                                Publicación: colocar fecha
+                            </small>
+                        </div>
+
+                        <a href="#"
+                            class="boton-web"
+                            onclick="alert('Coloca aquí el enlace del comunicado.'); return false;">
+                            Leer
+                        </a>
+
+                    </article>
 
 
-                <img src="./images/rightarrow.svg" class="testimony__arrow" id="next">
+                    <article class="comunicado">
+
+                        <div>
+                            <strong>
+                                Comunicado / Aviso N.° 02
+                            </strong>
+
+                            <small>
+                                Publicación: colocar fecha
+                            </small>
+                        </div>
+
+                        <a href="#"
+                            class="boton-web"
+                            onclick="alert('Coloca aquí el enlace del comunicado.'); return false;">
+                            Leer
+                        </a>
+
+                    </article>
+
+
+                    <article class="comunicado">
+
+                        <div>
+                            <strong>
+                                Ver todos los comunicados del MINEDU
+                            </strong>
+
+                            <small>
+                                Accede al compendio oficial.
+                            </small>
+                        </div>
+
+                        <a href="https://www.gob.pe/institucion/minedu/colecciones/13088-comunicados"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="boton-web boton-web--azul">
+                            Ver comunicados
+                        </a>
+
+                    </article>
+
+                </div>
+
             </div>
+
         </section>
 
-        <section class="questions container">
-            <h2 class="subtitle">Preguntas frecuentes</h2>
-            <p class="questions__paragraph">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea, porro
-                doloribus neque perspiciatis sapiente fuga.</p>
+
+        <!-- =====================================================
+             HORARIO DE ATENCIÓN
+             ===================================================== -->
+        <section class="seccion-web seccion-web--gris">
+
+            <div class="container">
+
+                <h2 class="subtitle">
+                    Horario de atención
+                </h2>
+
+                <div class="horario-box">
+
+                    <i class="fa-solid fa-clock"></i>
+
+                    <h3>
+                        Atención Virtual
+                    </h3>
+
+                    <p>
+                        <strong>Lunes a viernes</strong>
+                    </p>
+
+                    <p>
+                        8:00 a. m. - 5:00 p. m.
+                    </p>
+
+                    <p>
+                        Chat en línea y atención por WhatsApp
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             PREGUNTAS FRECUENTES
+             ===================================================== -->
+        <section class="questions container" id="preguntas">
+
+            <h2 class="subtitle">
+                Preguntas frecuentes
+            </h2>
+
+            <p class="questions__paragraph">
+                Encuentra respuestas a las consultas más frecuentes.
+            </p>
 
             <section class="questions__container">
-                <article class="questions__padding">
-                    <div class="questions__answer">
-                        <h3 class="questions__title">¿Qué es CSS?
-                            <span class="questions__arrow">
-                                <img src="./images/arrow.svg" class="questions__img">
-                            </span>
-                        </h3>
-
-                        <p class="questions__show">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos
-                            facere, quidem eum id excepturi assumenda explicabo nam accusamus veritatis voluptates
-                            eveniet adipisci, dicta nihil nemo modi possimus officiis quam atque? Lorem ipsum, dolor sit
-                            amet consectetur adipisicing elit. Quos facere, quidem eum id excepturi assumenda explicabo
-                            nam accusamus veritatis voluptates eveniet adipisci, dicta nihil nemo modi possimus officiis
-                            quam atque?</p>
-                    </div>
-                </article>
 
                 <article class="questions__padding">
+
                     <div class="questions__answer">
-                        <h3 class="questions__title">¿Qué aprenderé en este curso?
+
+                        <h3 class="questions__title">
+                            ¿Cómo puedo comunicarme con un especialista?
+
                             <span class="questions__arrow">
-                                <img src="./images/arrow.svg" class="questions__img">
+                                <img src="./images/arrow.svg"
+                                    class="questions__img"
+                                    alt="Mostrar respuesta">
                             </span>
+
                         </h3>
 
-                        <p class="questions__show">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos
-                            facere, quidem eum id excepturi assumenda explicabo nam accusamus veritatis voluptates
-                            eveniet adipisci, dicta nihil nemo modi possimus officiis quam atque? Lorem ipsum, dolor sit
-                            amet consectetur adipisicing elit. Quos facere, quidem eum id excepturi assumenda explicabo
-                            nam accusamus veritatis voluptates eveniet adipisci, dicta nihil nemo modi possimus officiis
-                            quam atque?</p>
+                        <p class="questions__show">
+                            Puedes utilizar el chat en línea que aparece en la
+                            página o comunicarte mediante WhatsApp seleccionando
+                            el área correspondiente.
+                        </p>
+
                     </div>
+
                 </article>
+
 
                 <article class="questions__padding">
+
                     <div class="questions__answer">
-                        <h3 class="questions__title">¿Qué es CSS GRID?
+
+                        <h3 class="questions__title">
+                            ¿Cuál es el horario de atención?
+
                             <span class="questions__arrow">
-                                <img src="./images/arrow.svg" class="questions__img">
+                                <img src="./images/arrow.svg"
+                                    class="questions__img"
+                                    alt="Mostrar respuesta">
                             </span>
+
                         </h3>
 
-                        <p class="questions__show">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos
-                            facere, quidem eum id excepturi assumenda explicabo nam accusamus veritatis voluptates
-                            eveniet adipisci, dicta nihil nemo modi possimus officiis quam atque? Lorem ipsum, dolor sit
-                            amet consectetur adipisicing elit. Quos facere, quidem eum id excepturi assumenda explicabo
-                            nam accusamus veritatis voluptates eveniet adipisci, dicta nihil nemo modi possimus officiis
-                            quam atque?</p>
+                        <p class="questions__show">
+                            El horario de atención virtual es de lunes a viernes
+                            de 8:00 a. m. a 5:00 p. m.
+                        </p>
+
                     </div>
+
                 </article>
+
+
+                <article class="questions__padding">
+
+                    <div class="questions__answer">
+
+                        <h3 class="questions__title">
+                            ¿Qué información puedo encontrar en esta plataforma?
+
+                            <span class="questions__arrow">
+                                <img src="./images/arrow.svg"
+                                    class="questions__img"
+                                    alt="Mostrar respuesta">
+                            </span>
+
+                        </h3>
+
+                        <p class="questions__show">
+                            Encontrarás enlaces de interés, normas, documentos,
+                            comunicados y otros contenidos que sean publicados
+                            por el equipo responsable de la plataforma.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="questions__padding">
+
+                    <div class="questions__answer">
+
+                        <h3 class="questions__title">
+                            ¿Puedo consultar las normas del Ministerio de Educación?
+
+                            <span class="questions__arrow">
+                                <img src="./images/arrow.svg"
+                                    class="questions__img"
+                                    alt="Mostrar respuesta">
+                            </span>
+
+                        </h3>
+
+                        <p class="questions__show">
+                            Sí. En la sección "Enlaces de interés" encontrarás
+                            accesos directos a las normas y documentos legales
+                            publicados por el Ministerio de Educación.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="questions__padding">
+
+                    <div class="questions__answer">
+
+                        <h3 class="questions__title">
+                            ¿Qué ocurre si escribo fuera del horario de atención?
+
+                            <span class="questions__arrow">
+                                <img src="./images/arrow.svg"
+                                    class="questions__img"
+                                    alt="Mostrar respuesta">
+                            </span>
+
+                        </h3>
+
+                        <p class="questions__show">
+                            Si el chat se encuentra fuera de horario, puedes
+                            dejar tu mensaje mediante el formulario disponible.
+                            El equipo podrá revisarlo posteriormente.
+                        </p>
+
+                    </div>
+
+                </article>
+
             </section>
 
-            <section class="questions__offer">
-                <h2 class="subtitle">¿Estas listo para aprender CSS?</h2>
-                <p class="questions__copy">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet ratione
-                    architecto magnam, officiis ex porro vero est voluptates quaerat quibusdam illo veniam reprehenderit
-                    eius atque tempora iure ab non autem.</p>
-                <a href="#" class="cta">Aprende ahora</a>
-            </section>
         </section>
+
     </main>
 
+
+    <!-- =========================================================
+         PIE DE PÁGINA
+         ========================================================= -->
     <footer class="footer">
+
         <section class="footer__container container">
+
             <nav class="nav nav--footer">
-                <h2 class="footer__title">Curso CSS.</h2>
+
+                <h2 class="footer__title">
+                    UGEL 05 - Recursos Humanos
+                </h2>
 
                 <ul class="nav__link nav__link--footer">
+
                     <li class="nav__items">
-                        <a href="#" class="nav__links">Inicio</a>
+                        <a href="#inicio" class="nav__links">Inicio</a>
                     </li>
+
                     <li class="nav__items">
-                        <a href="#" class="nav__links">Acerca de</a>
+                        <a href="#enlaces" class="nav__links">Enlaces</a>
                     </li>
+
                     <li class="nav__items">
-                        <a href="#" class="nav__links">Contacto</a>
+                        <a href="#normas" class="nav__links">Normas</a>
                     </li>
+
                     <li class="nav__items">
-                        <a href="#" class="nav__links">Blog</a>
+                        <a href="#comunicados" class="nav__links">Comunicados</a>
                     </li>
+
+                    <li class="nav__items">
+                        <a href="#preguntas" class="nav__links">Preguntas frecuentes</a>
+                    </li>
+
                 </ul>
+
             </nav>
 
-            <form class="footer__form" action="https://formspree.io/f/mknkkrkj" method="POST">
-                <h2 class="footer__newsletter">Suscribete a la newsletter</h2>
-                <div class="footer__inputs">
-                    <input type="email" placeholder="Email:" class="footer__input" name="_replyto">
-                    <input type="submit" value="Registrate" class="footer__submit">
-                </div>
-            </form>
         </section>
+
 
         <section class="footer__copy container">
+
             <div class="footer__social">
-                <a href="#" class="footer__icons"><img src="./images/facebook.svg" class="footer__img"></a>
-                <a href="#" class="footer__icons"><img src="./images/twitter.svg" class="footer__img"></a>
-                <a href="#" class="footer__icons"><img src="./images/youtube.svg" class="footer__img"></a>
+
+                <a href="https://www.facebook.com/"
+                    class="footer__icons"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Facebook">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+
+                <a href="https://www.youtube.com/"
+                    class="footer__icons"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="YouTube">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+
             </div>
 
-            <h3 class="footer__copyright">Derechos reservados &copy; José Luis Asto</h3>
+            <h3 class="footer__copyright">
+                © 2026 UGEL 05 - Recursos Humanos. Todos los derechos reservados.
+            </h3>
+
         </section>
+
     </footer>
 
+
+    <!-- =========================================================
+         SCRIPTS EXISTENTES
+         ========================================================= -->
     <script src="./js/slider.js"></script>
     <script src="./js/questions.js"></script>
     <script src="./js/menu.js"></script>
-    
- <!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/6a9379c6adddbc344758492f/1k1817bq4';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-<!--End of Tawk.to Script-->
-    
+
+
+    <!-- =========================================================
+         TAWK.TO
+         IMPORTANTE: NO MODIFICAR ESTA PARTE
+         ========================================================= -->
+    <script type="text/javascript">
+
+        var Tawk_API = Tawk_API || {},
+            Tawk_LoadStart = new Date();
+
+        (function () {
+
+            var s1 = document.createElement("script"),
+                s0 = document.getElementsByTagName("script")[0];
+
+            s1.async = true;
+
+            s1.src =
+                'https://embed.tawk.to/6a9379c6adddbc344758492f/1k1817bq4';
+
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+
+            s0.parentNode.insertBefore(s1, s0);
+
+        })();
+
+    </script>
+
+
+    <!-- =========================================================
+         WHATSAPP
+         ========================================================= -->
     <script>
-document.addEventListener("DOMContentLoaded", function() {
 
-  const btn = document.getElementById("waBtn");
-  const box = document.getElementById("waBox");
+        document.addEventListener("DOMContentLoaded", function () {
 
-  btn.addEventListener("click", function() {
-      if (box.style.display === "block") {
-          box.style.display = "none";
-      } else {
-          box.style.display = "block";
-      }
-  });
+            const btn = document.getElementById("waBtn");
+            const box = document.getElementById("waBox");
 
-});
-</script>
-    
-<!-- BOTON WHATSAPP FLOTANTE -->
-<div class="wa-float">
-   <button class="wa-button" id="waBtn">
-   <i class="fa-brands fa-whatsapp"></i>
-</button>
+            if (btn && box) {
 
-    <div class="wa-box" id="waBox">
-        <h4>EEL-UGEL05</h4>
-        <a href="https://wa.me/51996615927" target="_blank"> Felicia</a>
-        <a href="https://wa.me/51922222222" target="_blank"> Ivan</a>
-        <a href="https://wa.me/51933333333" target="_blank"> Edith</a>
+                btn.addEventListener("click", function () {
+
+                    if (box.style.display === "block") {
+                        box.style.display = "none";
+                    } else {
+                        box.style.display = "block";
+                    }
+
+                });
+
+            }
+
+        });
+
+    </script>
+
+
+    <!-- BOTÓN WHATSAPP FLOTANTE -->
+
+    <div class="wa-float">
+
+        <button class="wa-button"
+            id="waBtn"
+            aria-label="Abrir WhatsApp">
+
+            <i class="fa-brands fa-whatsapp"></i>
+
+        </button>
+
+
+        <div class="wa-box" id="waBox">
+
+            <h4>ATENCIÓN POR WHATSAPP</h4>
+
+            <!--
+                Mantengo el número que ya estaba en tu HTML.
+                Cuando me des los números reales de cada área,
+                podemos reemplazar estos enlaces.
+            -->
+
+            <a href="https://wa.me/51996615927"
+                target="_blank"
+                rel="noopener noreferrer">
+                <i class="fa-brands fa-whatsapp"></i>
+                Escalafón y Legajos
+            </a>
+
+
+            <a href="#"
+                onclick="alert('Número de WhatsApp pendiente de configurar.'); return false;">
+                <i class="fa-brands fa-whatsapp"></i>
+                Licencias
+            </a>
+
+
+            <a href="#"
+                onclick="alert('Número de WhatsApp pendiente de configurar.'); return false;">
+                <i class="fa-brands fa-whatsapp"></i>
+                Bienestar
+            </a>
+
+        </div>
+
     </div>
-</div>
 
-<script>
-function toggleWA() {
-  var box = document.getElementById("waBox");
-  box.style.display = box.style.display === "block" ? "none" : "block";
-}
-</script>
-    
 </body>
 
 </html>
+
+            
+          
